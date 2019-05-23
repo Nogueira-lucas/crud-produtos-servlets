@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud Produto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="template/estilo.css">
+</head>
+<body class="row">
+    <header class="header col s12">
+        <h2>Dashboard: Produtos</h2>
+    </header>
+<section id="cadastrarForm" class="container offset-s2 col s8 col m12 offset-l3 col l6">
+   <script type="text/javascript" src="template/script.js"></script>
+    <form  action="cadastroProduto" method="get">
+        <div class="input-field">
+            <input type="text" name="nome" id="txtNome">
+            <label for="nome">Nome:</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="fabricante" id="txtFabricante">
+            <label for="fabricante">Fabricante:</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="valor" id="txtValor">
+            <label for="valor">Valor:</label>
+        </div>
+        <button type="submit" id="btnSubmit" class="botaoForm col m12 s12 waves-effect waves-light btn">Enviar</button>
+    	<button style="display:none; margin-top:1%;" id="btnCancelar" class="botaoForm col m12 s12 waves-effect waves-light btn">Cancelar</button>
+    </form>
+</section>

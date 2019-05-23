@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crud Produto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../template/estilo.css">
+</head>
+<body class="row">
+    <header class="header col s12">
+        <h2>Estoque de Produtos</h2>
+    </header>
+    <section class="container offset-s2 col s8 col m12 offset-l3 col l6">
+        <form action="">
+            <div class="input-field">
+                <input type="text" name="nome">
+                <label for="nome">Nome:</label>
+            </div>
+            <div class="input-field">
+                <input type="text" name="fabricante">
+                <label for="fabricante">Fabricante:</label>
+            </div>
+            <div class="input-field">
+                <input type="text" name="valor">
+                <label for="valor">Valor:</label>
+            </div>
+            <input type="submit" value="Cadastrar" class="col m12 s12 waves-effect waves-light btn-large"/>
+        </form>
+    </section>
+    <section class="container">
+        <table class="tabelaProdutos offset-s1 col s10 m10 offset-l2 l8">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vinho</td>
+                    <td>Velho Barrero</td>
+                    <td>12,89</td>
+                    <td><a class="waves-effect waves-teal btn-flat">Visualizar</a></td>
+                </tr>
+                <tr>
+                    <td>Vinho</td>
+                    <td>Velho Barrero</td>
+                    <td>12,89</td>
+                    <td><a class="waves-effect waves-teal btn-flat">Visualizar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
