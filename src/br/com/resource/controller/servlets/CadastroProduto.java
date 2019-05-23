@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.resource.controller.rn.GerenciaProduto;
+import br.com.resource.controller.regranegocio.GerenciaProduto;
 import br.com.resource.model.Produto;
 
 @WebServlet("/cadastroProduto")
@@ -33,18 +33,11 @@ public class CadastroProduto extends HttpServlet {
 		}catch (NumberFormatException e) {
 			session.setAttribute("resposta", "Erro ao cadastrar: campo(s) vazio(s)");
 		}
-			
-		int numero = GerenciaProduto.cadastrarProduto(produto);
 		
-		if(numero == 1) {
-			session.setAttribute("resposta", "Cadastro efetuado com sucesso!");
-		}else if(numero == 0){
-			session.setAttribute("resposta", "Produto já existe");
-		}else if(numero == 2){
-			session.setAttribute("resposta", "Campo vazio");
-		}else {
-			return;
-		}
+		String resposta = GerenciaProduto.cadastrarProduto(produto);
+		
+		session.setAttribute("resposta", resposta);
+		
 		session = request.getSession(false);
 		response.sendRedirect("index.jsp");
 		

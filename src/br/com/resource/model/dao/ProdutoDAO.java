@@ -35,7 +35,7 @@ public class ProdutoDAO {
 	}
 	
 	public void alterar(Produto produto) {
-		String sql = "UPDATE produtos SET(nome=?, fabricante=?, valor=?) WHERE(id=?)";
+		String sql = "update produtos set nome=?, fabricante=?, valor=? where id=?; ";
 		PreparedStatement pstm = null;
 		
 		try {

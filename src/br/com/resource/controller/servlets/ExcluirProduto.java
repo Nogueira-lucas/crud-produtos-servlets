@@ -14,16 +14,15 @@ import javax.servlet.http.HttpSession;
 import br.com.resource.controller.regranegocio.GerenciaProduto;
 import br.com.resource.model.Produto;
 
-@WebServlet("/AtualizarProduto")
-public class AtualizarProduto extends HttpServlet {
+@WebServlet("/ExcluirProduto")
+public class ExcluirProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public AtualizarProduto() {
+
+    public ExcluirProduto() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Produto produto = new Produto();
 		HttpSession session = request.getSession(true);
 		try {
@@ -33,16 +32,16 @@ public class AtualizarProduto extends HttpServlet {
 			produto.setValor(new BigDecimal(request.getParameter("valor").replace(",", ".")));
 			
 		}catch (NumberFormatException e) {
-			session.setAttribute("resposta", "Erro ao cadastrar: campo(s) vazio(s)");
+			session.setAttribute("resposta", "Erro ao excluir: campo(s) vazio(s)");
 		}
 		
 		String resposta;
 		try {
-			resposta = GerenciaProduto.atualizarProduto(produto);
+			resposta = GerenciaProduto.excluirProduto(produto);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			resposta = "Não foi possível cadastrar!";
+			resposta = "Não foi possível excluir!";
 		}
 		
 		session.setAttribute("resposta", resposta);
